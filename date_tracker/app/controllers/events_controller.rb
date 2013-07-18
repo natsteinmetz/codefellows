@@ -2,7 +2,7 @@ class EventsController < ApplicationController
   # GET /events
   # GET /events.json
   def index
-		@events = Event.where("date > ?", Date.today).sort_by{|event| event.date}.reverse
+		@events = Event.where("date > ?", Date.today).sort_by{|event| event.date}
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @events }
